@@ -1,3 +1,13 @@
+UnityAudioSync
+==============
+
+Released by Nuclear Horse Studios  http://nuclearhorsestudios.com
+
+Some code for syncing GameObject behaviors to real-time audio events
+
+
+Copy / Paste from Blog Post Announcement:
+
 Unity provides a few useful ways of inspecting audio in real time, namely [AudioSource.GetOutputData](http://docs.unity3d.com/ScriptReference/AudioSource.GetOutputData.html) and [AudioSource.GetSpectrumData](http://docs.unity3d.com/ScriptReference/AudioSource.GetSpectrumData.html).  These methods are minimally documented, and I hadn’t seen many working examples besides a few small implementations on Unity Answers and forums, so I decided to do a working example of using this functionality in a generalized way in an actual game.  
 
 Please keep in mind I’m not an Audio Engineer, just a nerd.  Feel free to let me know of any errors in logic, nomenclature, or morality expressed here.  
@@ -66,7 +76,7 @@ One can attach one or more AudioActor components to a GameObject.  Choose which 
 
 ###Problems / Bugs / Gotchas / Todos / Shitty code
 * In this release the AudioWatcher object is acting kind of like a Singleton.  There’s no good reason to have the Watcher be a singleton (though in most cases I’d assume that there would only be one in the scene).  The only reason it is currently implemented as a singleton is for my convenience while getting things working.  This will be changed in a followup release, and shouldn’t be hard to change on your own if you need multiple watchers in a scene.
-* Event Type definitions and implementations are spread out among all three main classes, and should probably be decoupled and generalized.  This would allow more complex and interesting event types to be defined easily, and make the rest of the code a little cleaner by consolidating all the event stuff in one place.
+* Event Type definitions and implementations are spread out among all three main classes, and should probably be decoupled and generalized.  This would allow more complex and interesting event types to be defined easily, and make the rest of the code a little cleaner by consolidating all the event stuff in one place.  
 * I’m using Unity Free, so currently I cannot profile this code.  That said, performance has been good, and the audio processing only takes a couple milliseconds.  
 * Initially the number of bands was going to be configurable.  That was too complex and a stupid idea, so now the number of bands is hard set to 8.  There still are some remnants of the old configurable code though, so you might see me doing math when i shouldn’t have to somewhere.  
 * The custom EditorWindow stuff is kind of buggy, and if you do something like remove all methods from an AudioActor it can get wacky and freak out.  For now, just remove the component and re-add it.  This will be adressed in a point release soon.  
