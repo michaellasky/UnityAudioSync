@@ -1,11 +1,3 @@
-UnityAudioSync
-==============
-
-Some code for syncing GameObject behaviors to real-time audio events
-
-
-Copy / Paste from Blog Post Announcement:
-
 Unity provides a few useful ways of inspecting audio in real time, namely [AudioSource.GetOutputData](http://docs.unity3d.com/ScriptReference/AudioSource.GetOutputData.html) and [AudioSource.GetSpectrumData](http://docs.unity3d.com/ScriptReference/AudioSource.GetSpectrumData.html).  These methods are minimally documented, and I hadn’t seen many working examples besides a few small implementations on Unity Answers and forums, so I decided to do a working example of using this functionality in a generalized way in an actual game.  
 
 Please keep in mind I’m not an Audio Engineer, just a nerd.  Feel free to let me know of any errors in logic, nomenclature, or morality expressed here.  
@@ -14,9 +6,7 @@ Please keep in mind I’m not an Audio Engineer, just a nerd.  Feel free to let 
 ##MusicWars
 The little demo game I made (originally for the first LawlessJam) is called MusicWars, you can try it out below (Unity Web Player required).  Control the ship with WASD, shoot with the primary mouse button.  Dodge enemy bullets, but don’t worry if you get hit because you can’t die.  When you get hit you only lose score.  Powerups will randomly spawn when enemies are shot.  The goal is to get the highest score you can during the selected song.  
 
-<div style="text-align: center">
     <img src="https://i.imgur.com/Lh3XN4Q.png" width="80%" />
-</div>
 
 ####A few notes about the Demo
 * It’s just a demo, and I wanted to keep dependencies to a minimum.  Therefor it uses the old crappy Unity GUI.
@@ -67,9 +57,7 @@ Therefor, if one adds a method that matches that signature to any of the other c
 
 Once the EWing component has been attached to a GameObject along with an AudioActor object you’ll see:
 
-<div style="text-align:center">
      <img src="http://i.imgur.com/HebgHP9.png" />
-</div>
 
 # 
 In this case it will call EWing::Fire anytime the Vibration event fires on the LOW, MID, HIGH_MID, or HIGH bands.  
@@ -97,5 +85,5 @@ All the Audio Synchronization code and MusicWars code are released under the MIT
 * Awesome explosions from [Detonator Explosion Framework](http://u3d.as/content/ben-throop/detonator-explosion-framework/1qK)
 
 ##Download Source Code
-* Github: Full MusicWars Source
-* Github: Audio Code Only
+* [Github: Full MusicWars Source](https://github.com/NuclearHorseStudios/MusicWars)
+* [Github: Audio Code Only](https://github.com/NuclearHorseStudios/UnityAudioSync)
